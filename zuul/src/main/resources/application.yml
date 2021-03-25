@@ -1,0 +1,22 @@
+server:
+  port: 8891
+spring:
+  application:
+    name: zuulsrv
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://eurekasvr:8861/eureka/
+
+zuul:
+  routes:
+    ZuulRoute1:
+      path: /**
+      url: http://localhost:8881/
+      #url: http://srvconsumer:8881/
+
+
+
